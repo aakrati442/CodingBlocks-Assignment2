@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+    public static List<Integer> processNumbers(List<Integer> numbers) {
+        int cumulativeSum = 0;
+        List<Integer> processedNumbers = new ArrayList<>();
+
+        for (int num : numbers) {
+            cumulativeSum += num;
+            if (cumulativeSum < 0) {
+                break;
+            }
+            processedNumbers.add(num);
+        }
+
+        return processedNumbers;
+    }
+
+    public static void main(String args[]) {
+        Scanner scanner = new Scanner(System.in);
+
+        List<Integer> inputNumbers = new ArrayList<>();
+        while (scanner.hasNextInt()) {
+            int num = scanner.nextInt();
+            inputNumbers.add(num);
+        }
+
+        List<Integer> outputNumbers = processNumbers(inputNumbers);
+        for (int num : outputNumbers) {
+            System.out.println(num);
+        }
+    }
+}
