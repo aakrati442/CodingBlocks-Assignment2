@@ -1,32 +1,36 @@
-import java.util.*;
-public class Main {
-    public static List<Integer> processNumbers(List<Integer> numbers) {
-        int cumulativeSum = 0;
-        List<Integer> processedNumbers = new ArrayList<>();
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-        for (int num : numbers) {
-            cumulativeSum += num;
-            if (cumulativeSum < 0) {
+public class CumulativeSum {
+
+    public static List<Integer> processNumbers(List<Integer> numbers) {
+        int a = 0;
+        List<Integer> b = new ArrayList<>();
+
+        for (int c : numbers) {
+            a += c;
+            if (a < 0) {
                 break;
             }
-            processedNumbers.add(num);
+            b.add(c);
         }
 
-        return processedNumbers;
+        return b;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<Integer> inputNumbers = new ArrayList<>();
+        List<Integer> a = new ArrayList<>();
         while (scanner.hasNextInt()) {
-            int num = scanner.nextInt();
-            inputNumbers.add(num);
+            int c = scanner.nextInt();
+            a.add(c);
         }
 
-        List<Integer> outputNumbers = processNumbers(inputNumbers);
-        for (int num : outputNumbers) {
-            System.out.println(num);
+        List<Integer> b = processNumbers(a);
+        for (int c : b) {
+            System.out.println(c);
         }
     }
 }
